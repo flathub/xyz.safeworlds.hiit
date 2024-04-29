@@ -1,6 +1,6 @@
 id: xyz.safeworlds.hiit
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable # 23.08
@@ -31,9 +31,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/mfep/exercise-timer
-        commit: af3ed1a91a075ac377d955e0c639c1c3f2f68a2d
+        commit: 79b17429dd7bd629133c97aa6ffca36bff657951
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        tag: v1.1.0
+        tag: v1.2.0
       - ./cargo-sources.json

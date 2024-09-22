@@ -1,10 +1,10 @@
 id: xyz.safeworlds.hiit
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.rust-stable # 23.08
-  - org.freedesktop.Sdk.Extension.llvm16
+  - org.freedesktop.Sdk.Extension.rust-stable
+  - org.freedesktop.Sdk.Extension.llvm18
 command: hiit
 finish-args:
   - --share=ipc
@@ -13,8 +13,8 @@ finish-args:
   - --socket=pulseaudio
   - --device=dri
 build-options:
-  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm16/bin
-  prepend-ld-library-path: /usr/lib/sdk/llvm16/lib
+  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin
+  prepend-ld-library-path: /usr/lib/sdk/llvm18/lib
   env:
     CARGO_HOME: /run/build/hiit/cargo
     CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
@@ -31,9 +31,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/mfep/exercise-timer
-        commit: 0bf395c1789bcbd8f8b73d40d9951cd20c4d84e1
+        commit: 7c38aaabdab2615e0523ad2460b30accc84b6589
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        tag: v1.5.0
+        tag: v1.6.0
       - ./cargo-sources.json

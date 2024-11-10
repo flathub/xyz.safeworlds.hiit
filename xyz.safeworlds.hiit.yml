@@ -31,9 +31,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/mfep/exercise-timer
-        commit: 7c38aaabdab2615e0523ad2460b30accc84b6589
+        commit: cbc659ad242d77a3c498c32a71978094e2534ac3
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        tag: v1.6.0
+        tag: v1.6.1
       - ./cargo-sources.json

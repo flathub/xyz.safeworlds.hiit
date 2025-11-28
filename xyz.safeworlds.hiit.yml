@@ -1,10 +1,7 @@
 id: xyz.safeworlds.hiit
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.rust-stable
-  - org.freedesktop.Sdk.Extension.llvm18
 command: hiit
 finish-args:
   - --share=ipc
@@ -12,28 +9,15 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --device=dri
-build-options:
-  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin
-  prepend-ld-library-path: /usr/lib/sdk/llvm18/lib
-  env:
-    CARGO_HOME: /run/build/hiit/cargo
-    CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
-    CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER: clang
-    CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS: -C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold
-    CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: clang
-    CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_RUSTFLAGS: -C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold
 modules:
   - name: hiit
     buildsystem: meson
     run-tests: true
-    config-opts:
-      - -Doffline=true
     sources:
       - type: git
         url: https://github.com/mfep/exercise-timer
-        commit: 36491702a25d5e0fa2d557f38288c3d3f28eff6c
+        commit: a2991b2c6c544b67f76478a356f183cae27adf3e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        tag: v1.8.5
-      - ./cargo-sources.json
+        tag: v1.9.0

@@ -15,9 +15,9 @@ modules:
     run-tests: true
     sources:
       - type: git
-        url: https://github.com/mfep/exercise-timer
-        commit: cd1a1980647774d98b7a8dd6048dcc4f316482c3
+        url: https://gitlab.gnome.org/World/exercise-timer
+        commit: fbcc09f70cdd97eb0d6278d1fc84559f30d258cc
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        tag: v1.9.1
+        tag: v1.10.0

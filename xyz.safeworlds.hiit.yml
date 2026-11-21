@@ -16,7 +16,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/World/exercise-timer
-        commit: 9622d12c09034138a55c9741bcd87441f4d7a282
+        commit: 9a5c4bc56a1e2a29c8ab3b7127ac2230c6709a01
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$

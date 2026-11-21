@@ -1,6 +1,6 @@
 id: xyz.safeworlds.hiit
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: hiit
 finish-args:
@@ -16,8 +16,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/World/exercise-timer
-        commit: fbcc09f70cdd97eb0d6278d1fc84559f30d258cc
+        commit: 9622d12c09034138a55c9741bcd87441f4d7a282
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        tag: v1.10.0
+        tag: v1.11.0
